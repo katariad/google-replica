@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    font-size: 14px;
+    color: #202124;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: #202124;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.sign-in-btn {
+    background: #1a73e8;
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background: #1669d0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-decoration: none !important;
+}
+
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: -5vh;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    width: 272px;
+    margin-bottom: 1.8rem;
+}
+
+.search-form {
+    width: 100%;
+    max-width: 584px;
+    margin: 0 auto;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 5px 8px 5px 14px;
+    background: white;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    width: 100%;
+}
+
+.search-bar-container:hover,
+.search-bar-container:focus-within {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+.search-icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: #9aa0a6;
+    cursor: pointer;
+    padding: 0 8px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-btn:hover {
+    color: #202124;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    height: 34px;
+    background: transparent;
+}
+
+.mic-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 8px;
+    color: #5f6368;
+    transition: color 0.2s;
+}
+
+.mic-btn:hover:not(:disabled) {
+    color: #1a73e8;
+}
+
+.mic-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.search-btn,
+.lucky-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    padding: 0 16px;
+    height: 36px;
+    min-width: 120px;
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.search-btn:hover,
+.lucky-btn:hover {
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+}
+
+.footer {
+    background: #f2f2f2;
+    color: #70757a;
+    font-size: 14px;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #dadce0;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: #70757a;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Resposnoive */
+@media (max-width: 600px) {
+    .header {
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .header-left,
+    .header-right {
+        gap: 0.8rem;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .search-bar-container {
+        padding: 3px 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .search-btn,
+    .lucky-btn {
+        width: 220px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .header-left,
+    .header-right {
+        gap: 0.5rem;
+        font-size: 13px;
+    }
+
+    .sign-in-btn {
+        padding: 6px 12px;
+    }
+}

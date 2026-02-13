@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <a
+          href="https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header"
+          target="_blank"
+          >About</a
+        >
+        <a href="https://store.google.com/" target="_blank">Store</a>
+      </div>
+      <div class="header-right">
+        <a href="https://mail.google.com/" target="_blank">Gmail</a>
+        <a href="https://images.google.com/" target="_blank">Images</a>
+        <a
+          href="https://accounts.google.com/ServiceLogin"
+          class="sign-in-btn"
+          target="_blank"
+          >Sign in</a
+        >
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="logo">
+        <img
+          src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+          alt="Google"
+          width="272"
+          height="92"
+        />
+      </div>
+
+      <form
+        class="search-form"
+        action="https://www.google.com/search"
+        method="GET"
+        id="google-search-form"
+      >
+        <div class="search-bar-container">
+          <button
+            type="submit"
+            name="btnK"
+            value="Google Search"
+            class="search-icon-btn"
+            aria-label="Google Search"
+            title="Search"
+          >
+            🔍
+          </button>
+
+          <input
+            type="text"
+            name="q"
+            class="search-input"
+            autocomplete="off"
+            autofocus
+            placeholder="Search Google or type a URL"
+          />
+          <button
+            type="button"
+            class="mic-btn"
+            id="voice-search-btn"
+            aria-label="Search by voice"
+            title="Voice search"
+          >
+            🎤
+          </button>
+        </div>
+
+        <div class="action-buttons">
+          <button
+            type="submit"
+            name="btnK"
+            value="Google Search"
+            class="search-btn"
+          >
+            Google Search
+          </button>
+          <button
+            type="submit"
+            name="btnI"
+            value="I'm Feeling Lucky"
+            class="lucky-btn"
+          >
+            I'm Feeling Lucky
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <a href="https://ads.google.com/" target="_blank">Advertising</a>
+        <a href="https://www.google.com/services/" target="_blank">Business</a>
+        <a href="https://www.google.com/search/howsearchworks/" target="_blank"
+          >How Search works</a
+        >
+      </div>
+      <div class="footer-right">
+        <a href="https://policies.google.com/privacy" target="_blank"
+          >Privacy</a
+        >
+        <a href="https://policies.google.com/terms" target="_blank">Terms</a>
+        <a href="#" id="settings-fake">Settings</a>
+      </div>
+    </footer>
+  </body>
+</html>
