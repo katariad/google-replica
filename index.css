@@ -13,6 +13,8 @@ body {
 }
 
 
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -52,12 +54,89 @@ body {
     cursor: pointer;
 }
 
+.icon_box {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 48px;
+    outline: none;
+    padding: 4px;
+    position: relative;
+}
+
+
+
+
+.labsvg {
+    fill: #5f6368;
+}
+
+.labicon {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 4px;
+    position: relative;
+    width: 40px;
+    box-sizing: border-box;
+}
+
+.labicon::before {
+    background: #444746;
+    border-radius: 100px;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+    width: 100%;
+}
+
+.labicon::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+}
+
+.labicon:hover {
+    background-color: rgba(60, 64, 67, .08);
+}
+
+.labicon:focus::before {
+    opacity: .12;
+}
+
+
 .sign-in-btn:hover {
     background: #1669d0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     text-decoration: none !important;
 }
 
+.language_tab {
+    font-size: small;
+    margin-bottom: 24px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#SIvCob {
+    color:
+        #474747;
+    display: inline-block;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: Arial sans-serif;
+}
 
 .main {
     flex: 1;
@@ -75,6 +154,7 @@ body {
     width: 272px;
     margin-bottom: 1.8rem;
 }
+
 
 .search-form {
     width: 100%;
@@ -182,6 +262,17 @@ body {
     border-top: 1px solid #dadce0;
 }
 
+.upper_footer {
+    background: #f2f2f2;
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--gS5jXb);
+    font-size: 15px;
+    color: var(--YLNNHc);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .footer-left,
 .footer-right {
     display: flex;
@@ -197,6 +288,11 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
 
 /* Resposnoive */
 @media (max-width: 600px) {
