@@ -215,8 +215,6 @@ input.addEventListener("input", () => {
   }, 300);
 });
 
-console.log(list);
-
 function showSuggestions(list) {
   suggestionsBox.innerHTML = "";
 
@@ -246,3 +244,42 @@ document.addEventListener("click", (e) => {
     suggestionsBox.style.display = "none";
   }
 });
+
+// search with mic
+
+const micBtn = document.getElementById("voice-search-btn");
+const form = document.getElementById("google-search-form");
+
+// Check browser support
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+  micBtn.style.display = "none";
+  console.warn("Speech recognition not supported");
+} else {
+  const recognition = new SpeechRecognition();
+
+  recognition.lang = "en-US"; // change to 'hi-IN' for Hindi
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  micBtn.addEventListener("click", () => {
+    recognition.start();
+    micBtn.textContent = "🎙️"; // listening indicator
+  });
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    input.value = transcript;
+    form.submit(); // 🔥 Google-style auto search
+  };
+
+  recognition.onerror = () => {
+    micBtn.textContent = "🎤";
+  };
+
+  recognition.onend = () => {
+    micBtn.textContent = "🎤";
+  };
+}
