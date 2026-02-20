@@ -276,15 +276,17 @@ body {
 
 #apps_layout {
     position: relative;
+    height: 100%;
 
 }
 
 .iconLayout_div {
+    display: none;
     position: absolute;
     top: 45px;
     left: -217px;
     box-sizing: border-box;
-    height: 100%;
+    max-height: 80dvh;
     padding: 3px 10px 14px;
 }
 
@@ -300,6 +302,8 @@ body {
     box-sizing: border-box;
     display: block;
     height: 100%;
+    max-height: 70dvh;
+    overflow-y: scroll;
     margin: 3px auto;
     overflow-x: hidden;
     outline: 1px solid transparent;
@@ -309,17 +313,8 @@ body {
     overflow-y: auto;
 }
 
-.iconLayout_div::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    background-color: rgba(31, 31, 31, .16);
-    border-radius: 8px;
-    border: 1px solid transparent;
-    box-shadow: none;
-    height: 185px;
-    max-height: 33%;
-}
 
-.iconLayout_div::-webkit-scrollbar-thumb {
+.iconLayout_div .innerdiv::-webkit-scrollbar-thumb {
     background: rgb(218, 220, 224);
     background-clip: padding-box;
     border: 4px solid transparent;
@@ -328,30 +323,58 @@ body {
     min-height: 50px;
 }
 
-.EHzcec::-webkit-scrollbar-track {
+.iconLayout_div .innerdiv::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.iconLayout_div .innerdiv::-webkit-scrollbar-track {
     background: transparent;
     border: none;
     margin-bottom: 34px;
     margin-top: 34px;
 }
 
-.EHzcec::-webkit-scrollbar-track,
-.EHzcec::-webkit-scrollbar-track:hover {
+.iconLayout_div .innerdiv::-webkit-scrollbar-thumb:hover {
+    background: rgb(200, 202, 206);
+}
+
+.iconLayout_div .innerdiv::-webkit-scrollbar-thumb {
+    background: #f8fafd;
+}
+
+.iconLayout_div .innerdiv::-webkit-scrollbar-track,
+.iconLayout_div .innerdiv::-webkit-scrollbar-track:hover {
     background: none;
     border: none;
 }
 
-.first_inner_div {
-    background: #f8fafd;
+#flistdiv {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+#Slistdiv {
+
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
+}
+
+#Slistdiv {
+    margin-top: 5px;
+    background: #f8fafd;
 }
 
 .fDiv {
     font-size: 20px;
     font-weight: 500;
-    margin: 17px 5px 6px;
+    padding: 5px;
     color: #444746;
+
+}
+
+.singular_list {
+    width: max-content;
 
 }
 
@@ -361,6 +384,46 @@ body {
     margin: 17px 5px 6px;
     color: #444746;
 }
+
+#flistdiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 4px;
+    padding: 10px;
+    background: #f8fafd;
+
+}
+
+#Slistdiv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 4px;
+    padding: 10px;
+}
+
+.singular_list {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.singular_list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.singular_list img {
+    width: 48px;
+    height: 48px;
+}
+
+
 
 #SIvCob a {
     text-decoration: none;
