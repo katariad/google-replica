@@ -182,3 +182,67 @@ document.addEventListener("click", (e) => {
 appbtn.addEventListener("click", () => {
   iconbox.style.display = iconbox.style.display === "block" ? "none" : "block";
 });
+
+// suggestioj code
+const input = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestions");
+
+document.addEventListener("click", (e) => {
+  if (!suggestionsBox.contains(e.target)) {
+    suggestionsBox.style.display = "none";
+  }
+});
+
+let debounceTimer;
+
+input.addEventListener("input", () => {
+  clearTimeout(debounceTimer);
+  const query = input.value.trim();
+
+  if (!query) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  debounceTimer = setTimeout(() => {
+    fetch(`https://duckduckgo.com/ac/?q=${encodeURIComponent(query)}&type=list`)
+      .then((res) => res.json())
+      .then((data) => {
+        const suggestions = data[1]; // ✅ THIS IS IMPORTANT
+        showSuggestions(suggestions);
+      })
+      .catch((err) => console.error(err));
+  }, 300);
+});
+
+console.log(list);
+
+function showSuggestions(list) {
+  suggestionsBox.innerHTML = "";
+
+  if (!list.length) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  list.slice(0, 8).forEach((item) => {
+    const li = document.createElement("li");
+    li.innerHTML = item;
+
+    li.onclick = () => {
+      input.value = item;
+      suggestionsBox.style.display = "none";
+      document.getElementById("google-search-form").submit();
+    };
+
+    suggestionsBox.appendChild(li);
+  });
+
+  suggestionsBox.style.display = "block";
+}
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".search-form")) {
+    suggestionsBox.style.display = "none";
+  }
+});

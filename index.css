@@ -155,6 +155,19 @@ body {
     margin-bottom: 1.8rem;
 }
 
+.search-form {
+    position: relative;
+    width: 500px;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 8px 12px;
+}
+
 
 .search-form {
     width: 100%;
@@ -188,6 +201,30 @@ body {
     padding: 0 8px 0 0;
     display: flex;
     align-items: center;
+}
+
+.suggestions {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.suggestions li {
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background: #f1f3f4;
 }
 
 .search-icon-btn:hover {

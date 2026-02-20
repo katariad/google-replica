@@ -104,6 +104,7 @@
         action="https://www.google.com/search"
         method="GET"
         id="google-search-form"
+        target="_blank"
       >
         <div class="search-bar-container">
           <button
@@ -112,7 +113,6 @@
             value="Google Search"
             class="search-icon-btn"
             aria-label="Google Search"
-            title="Search"
           >
             🔍
           </button>
@@ -121,39 +121,24 @@
             type="text"
             name="q"
             class="search-input"
+            id="searchInput"
             autocomplete="off"
             autofocus
             placeholder="Search Google or type a URL"
           />
+
           <button
             type="button"
             class="mic-btn"
             id="voice-search-btn"
             aria-label="Search by voice"
-            title="Voice search"
           >
             🎤
           </button>
         </div>
 
-        <div class="action-buttons">
-          <button
-            type="submit"
-            name="btnK"
-            value="Google Search"
-            class="search-btn"
-          >
-            Google Search
-          </button>
-          <button
-            type="submit"
-            name="btnI"
-            value="I'm Feeling Lucky"
-            class="lucky-btn"
-          >
-            I'm Feeling Lucky
-          </button>
-        </div>
+        <!-- Suggestions -->
+        <ul class="suggestions" id="suggestions"></ul>
       </form>
       <div class="language_tab">
         <div id="SIvCob">
