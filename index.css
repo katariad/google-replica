@@ -156,7 +156,6 @@ body {
 }
 
 .search-form {
-    position: relative;
     width: 500px;
 }
 
@@ -171,6 +170,22 @@ body {
 .mic-btn.listening {
     color: red;
     animation: pulse 1s infinite;
+}
+
+.suggestions {
+    position: fixed;
+    /* 🔥 ANDROID SAFE */
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 45vh;
+    overflow-y: auto;
+    z-index: 2147483647;
+    /* 🔥 above everything */
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    border-radius: 12px;
 }
 
 @keyframes pulse {
@@ -222,20 +237,7 @@ body {
     align-items: center;
 }
 
-.suggestions {
-    list-style: none;
-    margin: 6px 0 0;
-    padding: 0;
-    position: absolute;
-    width: 100%;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: none;
-    max-height: 260px;
-    overflow-y: auto;
-    z-index: 100;
-}
+
 
 .suggestions li {
     padding: 10px 16px;
@@ -635,23 +637,6 @@ h4 {
 
     .iconLayout_div {
         transform: translateX(27%);
-    }
-
-    #suggestions {
-        position: fixed;
-        /* 🔥 REQUIRED FOR MOBILE */
-        top: 45%;
-        /* adjust to your search bar */
-        left: 0;
-        right: 0;
-        background: #fff;
-        max-height: 45vh;
-        overflow-y: auto;
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
-        z-index: 99999;
-        /* 🔥 ABOVE EVERYTHING */
-        display: none;
     }
 
     #preSuggestions li {

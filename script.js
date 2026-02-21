@@ -292,3 +292,13 @@ if (!SpeechRecognition) {
 }
 
 //  trending seraches
+function positionSuggestions() {
+  const rect = document.getElementById("searchInput").getBoundingClientRect();
+  const box = document.getElementById("suggestions");
+
+  box.style.top = rect.bottom + 5 + "px";
+  box.style.left = rect.left + "px";
+  box.style.width = rect.width + "px";
+}
+input.addEventListener("focus", positionSuggestions);
+window.addEventListener("resize", positionSuggestions);
