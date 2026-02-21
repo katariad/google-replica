@@ -637,6 +637,23 @@ h4 {
         transform: translateX(27%);
     }
 
+    #suggestions {
+        position: fixed;
+        /* 🔥 REQUIRED FOR MOBILE */
+        top: 45%;
+        /* adjust to your search bar */
+        left: 0;
+        right: 0;
+        background: #fff;
+        max-height: 45vh;
+        overflow-y: auto;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        z-index: 99999;
+        /* 🔥 ABOVE EVERYTHING */
+        display: none;
+    }
+
     #preSuggestions li {
         width: 80dvw;
     }
@@ -651,6 +668,10 @@ h4 {
         right: -100%;
     }
 
+    .singular_list img {
+        width: 33px;
+        height: 35px;
+    }
 
 
 

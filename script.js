@@ -281,7 +281,6 @@ if (!SpeechRecognition) {
     input.value = transcript;
     form.submit(); // 🔥 Google-style auto search
   };
-  input.value = "";
 
   recognition.onerror = () => {
     micBtn.textContent = "🎤";
@@ -293,5 +292,3 @@ if (!SpeechRecognition) {
 }
 
 //  trending seraches
-
-const trending_data = fetch("");
