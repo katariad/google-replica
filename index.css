@@ -266,7 +266,6 @@ body {
     cursor: pointer;
     padding: 0 8px;
     color: #5f6368;
-    transition: color 0.2s;
 }
 
 .mic-btn:hover:not(:disabled) {
@@ -333,7 +332,7 @@ body {
 #apps_layout {
     position: relative;
     height: 100%;
-
+    z-index: 999;
 }
 
 .iconLayout_div {
@@ -352,7 +351,6 @@ body {
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
     background: #e9eef6;
-    background: var(--gm3-sys-color-surface-container-high, #e9eef6);
     border: none;
     box-shadow: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .3);
     box-sizing: border-box;
@@ -507,8 +505,60 @@ body {
 
 
 
+#preSuggestions {
+    list-style: none;
+    font-size: 14px;
+    max-width: 584px;
+    padding-left: 10px;
 
+}
 
+h4 {
+    color: #474747;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+
+}
+
+#preSuggestions li {
+    width: 100%;
+    color: #474747;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 28px;
+    line-height: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #474747;
+    transition: all .3s ease-in-out;
+}
+
+#preSuggestions li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-image: url('/assest/6797554-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#preSuggestions li:hover {
+    color: #9aa0a6;
+    border: #9aa0a6;
+
+}
+
+#preSuggestions li::before :hover {
+    width: 16px;
+    height: 16px;
+}
 
 /* Resposnoive */
 @media (max-width: 600px) {

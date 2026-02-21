@@ -273,6 +273,7 @@ if (!SpeechRecognition) {
     const transcript = event.results[0][0].transcript;
     input.value = transcript;
     form.submit(); // 🔥 Google-style auto search
+    input.value = "";
   };
 
   recognition.onerror = () => {
@@ -283,3 +284,7 @@ if (!SpeechRecognition) {
     micBtn.textContent = "🎤";
   };
 }
+
+//  trending seraches
+
+const trending_data = fetch("");
