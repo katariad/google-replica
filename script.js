@@ -227,15 +227,17 @@ function showSuggestions(list) {
     return;
   }
 
-  list.slice(0, 8).forEach((item) => {
+  list.slice(0, 8).forEach((text) => {
     const li = document.createElement("li");
-    li.innerHTML = item;
+    li.textContent = text;
 
-    li.onclick = () => {
-      input.value = item;
+    // 🔥 MOBILE SAFE
+    li.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      input.value = text;
       suggestionsBox.style.display = "none";
-      document.getElementById("google-search-form").submit();
-    };
+      form.submit();
+    });
 
     suggestionsBox.appendChild(li);
   });
@@ -243,7 +245,8 @@ function showSuggestions(list) {
   suggestionsBox.style.display = "block";
 }
 
-document.addEventListener("click", (e) => {
+// Hide suggestions safely (mobile-friendly)
+document.addEventListener("pointerdown", (e) => {
   if (!e.target.closest(".search-form")) {
     suggestionsBox.style.display = "none";
   }
