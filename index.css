@@ -608,7 +608,7 @@ h4 {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 
     .header-left,
     .header-right {
