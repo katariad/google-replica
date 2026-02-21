@@ -1,6 +1,6 @@
 const appList = [
   {
-    appname: "Google Search",
+    appname: " Search",
     link: "https://www.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png",
   },
@@ -10,37 +10,37 @@ const appList = [
     icon: "https://www.gstatic.com/images/branding/product/1x/gmail_48dp.png",
   },
   {
-    appname: "Google Drive",
+    appname: "Drive",
     link: "https://drive.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/drive_48dp.png",
   },
   {
-    appname: "Google Docs",
+    appname: " Docs",
     link: "https://docs.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/docs_48dp.png",
   },
   {
-    appname: "Google Sheets",
+    appname: "Sheets",
     link: "https://sheets.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/sheets_48dp.png",
   },
   {
-    appname: "Google Slides",
+    appname: "Slides",
     link: "https://slides.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/slides_48dp.png",
   },
   {
-    appname: "Google Forms",
+    appname: "Forms",
     link: "https://forms.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/forms_48dp.png",
   },
   {
-    appname: "Google Calendar",
+    appname: "Calendar",
     link: "https://calendar.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/calendar_48dp.png",
   },
   {
-    appname: "Google Meet",
+    appname: "Meet",
     link: "https://meet.google.com/",
     icon: "https://www.gstatic.com/images/branding/product/1x/meet_48dp.png",
   },
@@ -149,7 +149,11 @@ appList.slice(0, 6).forEach((app, i) => {
   img.alt = app.appname;
   img.title = app.appname;
 
+  const p = document.createElement("p");
+  p.innerHTML = app.appname;
+
   div.appendChild(img);
+  div.appendChild(p);
   maindiv.appendChild(div);
 });
 
@@ -273,8 +277,8 @@ if (!SpeechRecognition) {
     const transcript = event.results[0][0].transcript;
     input.value = transcript;
     form.submit(); // 🔥 Google-style auto search
-    input.value = "";
   };
+  input.value = "";
 
   recognition.onerror = () => {
     micBtn.textContent = "🎤";
